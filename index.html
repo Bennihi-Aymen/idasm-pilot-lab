@@ -187,6 +187,14 @@ td.hi{color:var(--warn);font-weight:700}
   .gate{grid-template-columns:1fr;gap:22px}
   .panel{padding:18px}
 }
+/* install button */
+#btnInstall{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:0;cursor:pointer;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,#2D5D8B,#1F8A8A);box-shadow:0 6px 16px rgba(45,93,139,.4);position:relative;animation:instPulse 2s ease-out infinite}
+#btnInstall[hidden]{display:none}
+#btnInstall::before{content:"";width:18px;height:18px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v12M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E")}
+#btnInstall:hover{filter:brightness(1.1);transform:translateY(-1px)}
+#btnInstall:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+@keyframes instPulse{0%{box-shadow:0 6px 16px rgba(45,93,139,.4),0 0 0 0 rgba(31,138,138,.55)}70%,100%{box-shadow:0 6px 16px rgba(45,93,139,.4),0 0 0 14px rgba(31,138,138,0)}}
+@media (prefers-reduced-motion:reduce){#btnInstall{animation:none}}
 /* buy button */
 .buyrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 20px}
 .buy{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 26px;border-radius:999px;background:linear-gradient(135deg,#FFB400,#FF6B2C);color:#1d1100;font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 6px 18px rgba(255,107,44,.35);border:0;cursor:pointer}
@@ -280,7 +288,7 @@ details.flagged .tblwrap{margin-top:10px}
       <div class="wm"><b>IDASM</b><span>Pilot Lab · <span data-i18n="brand.sub"></span></span></div>
     </div>
     <div class="tools">
-      <button class="btn sm" id="btnInstall" type="button" hidden data-i18n="app.install"></button>
+      <button id="btnInstall" type="button" hidden data-i18n="app.install"></button>
       <div class="seg" id="langSeg" role="group" aria-label="Language">
         <button type="button" data-lang="en">EN</button>
         <button type="button" data-lang="fr">FR</button>
